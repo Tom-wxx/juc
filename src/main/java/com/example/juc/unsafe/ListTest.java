@@ -1,6 +1,7 @@
 package com.example.juc.unsafe;
 
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 // java.util.ConcurrentModificationException 并发修改异常！
 public class ListTest {
