@@ -28,9 +28,9 @@ public class CASDemo {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            atomicStampedReference.compareAndSet(1,2,atomicStampedReference.getStamp(),atomicStampedReference.getStamp()+1);
+            System.out.println(atomicStampedReference.compareAndSet(1, 2, atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1));
             System.out.println("a2--->"+atomicStampedReference.getStamp());
-            System.out.println(atomicStampedReference.compareAndSet(2, 1, atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1));
+            System.out.println("第一次："+atomicStampedReference.compareAndSet(2, 1, atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1));
             System.out.println("a3--->"+atomicStampedReference.getStamp());
 
         },"a").start();
@@ -43,7 +43,7 @@ public class CASDemo {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(atomicStampedReference.compareAndSet(1, 6, stamp, stamp + 1));
+            System.out.println("第二次："+atomicStampedReference.compareAndSet(1, 6, stamp, stamp + 1));
             System.out.println("b2--->"+atomicStampedReference.getStamp());
         },"b").start();
     }

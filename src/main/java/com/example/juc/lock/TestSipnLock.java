@@ -27,6 +27,7 @@ public class TestSipnLock {
             }
 
         },"A").start();
+
             TimeUnit.SECONDS.sleep(1);
 
         new Thread(()->{
